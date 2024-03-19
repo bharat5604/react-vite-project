@@ -3,7 +3,7 @@ import { Skeleton } from "../ui/skeleton";
 
 const NewsCardSkeleton = () => {
   return (
-    <Card as="article">
+    <Card as="article" data-testid="news-card-skeleton">
       <div>
         <Skeleton className="w-full h-40 rounded-tl-md rounded-tr-md" />
       </div>
