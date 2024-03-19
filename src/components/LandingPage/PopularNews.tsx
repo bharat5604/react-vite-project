@@ -17,7 +17,7 @@ const PopularNews = () => {
           url: `viewed/30.json?api-key=${apiKey}`,
           method: "GET",
         });
-        console.log("response", response.data);
+        console.log("response", response);
         setPopularNews(response?.data?.results);
         setIsLoading(false);
       } catch (error) {
