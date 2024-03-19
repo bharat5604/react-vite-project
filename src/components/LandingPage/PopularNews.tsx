@@ -49,7 +49,7 @@ const PopularNews = () => {
     fetchPopularNews();
   }, []);
   return (
-    <section className="grid grid-cols-3 gap-5">
+    <section className="grid  gap-5 sm:grid-cols-2  md:grid-cols-3">
       {isLoading &&
         [1, 2, 3, 4, 5, 6].map((_, index) => <NewsCardSkeleton key={index} />)}
       {!isLoading &&
