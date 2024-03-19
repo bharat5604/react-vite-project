@@ -1,4 +1,4 @@
-import PopularNews from "@/components/Home/PopularNews";
+import PopularNews from "@/components/LandingPage/PopularNews";
 import { Shell } from "@/components/Shell";
 
 const Home = () => {
