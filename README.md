@@ -21,6 +21,14 @@ This project is created using Vite + ReactJS and TypeScript. It contains reusabl
    npm run dev
    ```
 
-## for testing run **npm test**
+## for testing run
 
-## for test coverage **npx jest --coverage**
+```bash
+   npm test
+```
+
+## for test coverage
+
+```bash
+  npx jest --coverage
+```
