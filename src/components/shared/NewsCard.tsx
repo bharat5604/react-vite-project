@@ -4,7 +4,7 @@ import { ResultsType } from "@/types/common";
 
 const NewsCard = ({ item }: { item: ResultsType }) => {
   return (
-    <Card data-testid="news-card">
+    <Card>
       <Link to={item?.url} target="_blank">
         <img
           src={`${

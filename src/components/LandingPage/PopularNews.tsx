@@ -6,6 +6,7 @@ import { Card, CardTitle } from "../ui/Card";
 import NewsCardSkeleton from "../skeletons/NewsCardSkeleton";
 import NewsCard from "../shared/NewsCard";
 import { ResponseType, ResultsType } from "@/types/common";
+import { PageHeader, PageHeaderHeading } from "../PageHeader";
 
 const PopularNews = () => {
   const [popularNews, setPopularNews] = useState<ResultsType[]>([]);
@@ -29,6 +30,9 @@ const PopularNews = () => {
   }, []);
   return (
     <>
+      <PageHeader>
+        <PageHeaderHeading size="sm">Popular News</PageHeaderHeading>
+      </PageHeader>
       <section className="grid  gap-5 sm:grid-cols-2  md:grid-cols-3">
         {isLoading &&
           [1, 2, 3, 4, 5, 6].map((_, index) => (
@@ -36,9 +40,7 @@ const PopularNews = () => {
           ))}
 
         {!isLoading &&
-          popularNews?.map((item) => (
-            <NewsCard item={item} key={item?.id} data-testid="news-card" />
-          ))}
+          popularNews?.map((item) => <NewsCard item={item} key={item?.id} />)}
       </section>
       {popularNews?.length === 0 && !isLoading && (
         <Card className="w-full p-10 text-center">
