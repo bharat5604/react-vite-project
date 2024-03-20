@@ -24,7 +24,7 @@ This project is created using Vite + ReactJS and TypeScript. It contains reusabl
 ## for testing run
 
 ```bash
-   npm test
+  npm test
 ```
 
 ## for test coverage
