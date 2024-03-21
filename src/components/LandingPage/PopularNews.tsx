@@ -30,9 +30,11 @@ const PopularNews = () => {
   }, []);
   return (
     <>
-      <PageHeader>
-        <PageHeaderHeading size="sm">Popular News</PageHeaderHeading>
-      </PageHeader>
+      {popularNews?.length >= 1 && (
+        <PageHeader>
+          <PageHeaderHeading size="sm">Popular News</PageHeaderHeading>
+        </PageHeader>
+      )}
       <section className="grid  gap-5 sm:grid-cols-2  md:grid-cols-3">
         {isLoading &&
           [1, 2, 3, 4, 5, 6].map((_, index) => (
