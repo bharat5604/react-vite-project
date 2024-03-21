@@ -12,21 +12,29 @@ const PopularNews = () => {
   const [popularNews, setPopularNews] = useState<ResultsType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   useEffect(() => {
+    let isMounted = true;
     const fetchPopularNews = async () => {
       try {
         const response: ResponseType = await ApiService.fetchData({
           url: `viewed/30.json?api-key=${apiKey}`,
           method: "GET",
         });
-
-        setPopularNews(response?.data?.results);
-        setIsLoading(false);
+        if (isMounted) {
+          setPopularNews(response?.data?.results);
+          setIsLoading(false);
+        }
       } catch (error) {
-        setIsLoading(false);
+        if (isMounted) {
+          setIsLoading(false);
+        }
         console.log(error);
       }
     };
     fetchPopularNews();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
   return (
     <>
